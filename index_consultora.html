@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buenos Aires Web | Consultoria Web</title>
+    <style>
+        /* =============================================
+           IMPORTAR FUENTE DE GOOGLE
+           ============================================= */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        /* =============================================
+           RESET Y BASE
+           ============================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            background-color: #f4f6f8;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Imágnes adaptables */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            margin: 1.5rem auto;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* =============================================
+           HEADER Y NAVEGACIÓN (Estilo Base / Móvil)
+           ============================================= */
+        header {
+            background-color: #1a1a2e; /* Azul oscuro */
+            color: #ffffff;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #e0e0e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #16213e;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            background-color: #e94560; /* Coral dinámico */
+        }
+
+        /* =============================================
+           CONTENIDO PRINCIPAL Y SECCIONES
+           ============================================= */
+        main {
+            max-width: 1100px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        section {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #e94560; /* Principio figura-fondo */
+        }
+
+        section h1 {
+            font-size: 1.8rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        section p {
+            font-size: 1rem;
+            color: #555555;
+            margin-bottom: 0.8rem;
+        }
+
+        /* =============================================
+           TARJETAS DEL EQUIPO (Móvil)
+           ============================================= */
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: #f8f9fa;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: #1a1a2e;
+            margin-bottom: 0.8rem;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #e94560;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #1a1a2e;
+        }
+
+        /* =============================================
+           FOOTER
+           ============================================= */
+        footer {
+            background-color: #1a1a2e;
+            color: #a0a8c0;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0.2rem 0;
+        }
+
+        /* =============================================
+           MEDIA QUERIES - ESCRITORIO (Desde 768px)
+           ============================================= */
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1.5rem 4rem;
+            }
+
+            main {
+                margin: 3rem auto;
+                gap: 2.5rem;
+            }
+
+            section {
+                padding: 2.5rem;
+            }
+
+            /* Distribución de la sección Inicio en 2 columnas */
+            #Inicio {
+                display: flex;
+                align-items: center;
+                gap: 2.5rem;
+                text-align: left;
+            }
+
+            #Inicio h1 {
+                text-align: left;
+            }
+
+            #Inicio img {
+                flex: 1;
+                max-width: 45%;
+                margin: 0;
+            }
+
+            #Inicio .contenido {
+                flex: 1;
+            }
+
+            /* Distribución del Equipo en Grid/Columnas */
+            .cards {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .card {
+                flex: 1 1 calc(33.333% - 1rem); /* 3 columnas */
+                min-width: 220px;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Buenos Aires Web</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Inicio">
+            <div class="contenido inicio">
+                <h1>Impulsamos tus negocios al mundo digital</h1>
+                <p>Somos una consultora especializada en <strong>desarrollo y diseño de páginas web</strong> a medida.</p>
+            </div>
+            <img src="img.jpg1.png" alt="servicios web">
+        </section>
+
+        <section class="propuesta">
+            <h2>¿Por qué elegirnos?</h2>
+            <p>Ayudamos a emprendedores, pymes y empresas a construir una presencia digital sólida, combinando tecnología, creatividad y estrategia.</p>
+            <p>Nuestro enfoque se basa en entender las necesidades de cada cliente para ofrecer soluciones personalizadas, desde sitios web modernos y funcionales hasta plataformas optimizadas para mejorar la experiencia del usuario y potenciar resultados.</p>
+        </section>
+
+        <section class="equipo">
+            <h2>Nuestro equipo</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Nicolas D'nofrio</h3>
+                    <a href="https://nidonofrio.github.io/proyecto1jueves/" target="_blank" rel="noopener">Ver perfil</a>
+                </div>
+                <div class="card">
+                    <h3>Yanina Flores</h3>
+                    <a href="https://yanifb.github.io/Proyecto1.Jueves/" target="_blank" rel="noopener">Ver perfil</a>
+                </div>
+                <div class="card">
+                    <h3>Matias Campagna</h3>
+                    <a href="https://maticampa.github.io/proyecto1jueves/" target="_blank" rel="noopener">Ver perfil</a>
+                </div>
+                <div class="card">
+                    <h3>Pablo Foscarini</h3>
+                    <a href="https://pfoscarini.github.io/proyecto1jueves/" target="_blank" rel="noopener">Ver perfil</a>
+                </div>
+                <div class="card">
+                    <h3>Diego Osorio</h3>
+                    <a href="https://osoriodie.github.io/Proyecto1/" target="_blank" rel="noopener">Ver perfil</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="informacion">
+            <p>© 2026 Buenos Aires Web - Consultoría Web</p>
+            <p>Buenos Aires, Argentina.</p>
+        </div>
+    </footer>
+</body>
+</html>

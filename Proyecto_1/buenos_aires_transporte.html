@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio - Centro de Transporte Buenos Aires Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f7fafd] text-[#1a2b4c]">
+  <header class="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-8 sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <div class="bg-[#1a2b4c] p-1.5 rounded-lg text-white">
+        <i data-lucide="bus" class="w-6 h-6"></i>
+      </div>
+      <span class="text-xl font-bold tracking-tight">Centro de Transporte Buenos Aires Web</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#" class="text-[#1a2b4c] font-bold border-b-2 border-[#1a2b4c]">Inicio</a>
+      <a href="#" class="text-gray-500 hover:text-[#1a2b4c] font-medium">Recorridos</a>
+      <a href="#" class="text-gray-500 hover:text-[#1a2b4c] font-medium">Tarifas</a>
+      <a href="#" class="text-gray-500 hover:text-[#1a2b4c] font-medium">Estado</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-full">
+        <i data-lucide="bell" class="w-5 h-5"></i>
+      </button>
+      <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-full">
+        <i data-lucide="user-circle" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="flex">
+    <aside class="w-72 bg-[#f1f4f7] border-r border-gray-200 min-h-[calc(100vh-64px)] p-6 hidden lg:block">
+      <div class="space-y-2">
+        <a href="#" class="flex items-center gap-3 p-3 bg-orange-500 text-white rounded-xl shadow-md">
+          <i data-lucide="home" class="w-5 h-5"></i>
+          <span class="font-medium">Inicio</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-white rounded-xl transition-colors">
+          <i data-lucide="map" class="w-5 h-5"></i>
+          <span class="font-medium">Mapas de Ruta</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-white rounded-xl transition-colors">
+          <i data-lucide="credit-card" class="w-5 h-5"></i>
+          <span class="font-medium">Portal de Tarifas</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-white rounded-xl transition-colors">
+          <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+          <span class="font-medium">Alertas</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="flex-1 p-8">
+      <div class="max-w-6xl mx-auto space-y-8">
+        
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden p-8 md:p-12">
+          <div class="max-w-3xl">
+            <span class="text-xs font-bold text-orange-600 uppercase tracking-widest block mb-3">Bienvenidos al proyecto</span>
+            
+            <h1 class="text-3xl md:text-4xl font-extrabold text-[#1a2b4c] tracking-tight mb-4">
+              Centro de Transporte Buenos Aires Web
+            </h1>
+            
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              Somos el portal principal de gestión y coordinación para la red de colectivos de la región. Diseñada para optimizar tu movilidad diaria, nuestra plataforma digital te conecta con soluciones de transporte eficientes, ayudándote a planificar tus viajes en colectivos urbanos e interurbanos de manera rápida, segura y centralizada.
+            </p>
+            
+            <div class="bg-[#f7fafd] border-l-4 border-blue-500 p-4 rounded-r-xl mb-8">
+              <p class="text-sm text-[#1a2b4c] font-medium italic">
+                <strong>Objetivo de esta plataforma:</strong> Facilitar a los usuarios el acceso en tiempo real a recorridos de colectivos, mapas de rutas optimizados, gestión remota de recargas de tarjetas y reportes actualizados sobre el estado del servicio en las calles.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Servicios e Infraestructura de Colectivos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              
+              <div class="border border-gray-100 bg-[#f1f4f7]/50 p-5 rounded-xl flex items-start gap-4">
+                <div class="bg-blue-500 text-white p-2.5 rounded-lg shadow-md">
+                  <i data-lucide="bus" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm">Líneas Urbanas</h4>
+                  <p class="text-xs text-gray-500 mt-1">Recorridos internos de alta frecuencia dentro de la ciudad autónoma.</p>
+                </div>
+              </div>
+
+              <div class="border border-gray-100 bg-[#f1f4f7]/50 p-5 rounded-xl flex items-start gap-4">
+                <div class="bg-[#1a2b4c] text-white p-2.5 rounded-lg shadow-md">
+                  <i data-lucide="git-merge" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm">Líneas Interurbanas</h4>
+                  <p class="text-xs text-gray-500 mt-1">Conexiones rápidas hacia los diferentes cordones de la provincia.</p>
+                </div>
+              </div>
+
+              <div class="border border-gray-100 bg-[#f1f4f7]/50 p-5 rounded-xl flex items-start gap-4">
+                <div class="bg-orange-500 text-white p-2.5 rounded-lg shadow-md">
+                  <i data-lucide="milestone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm">Metrobús / Carriles Exclusivos</h4>
+                  <p class="text-xs text-gray-500 mt-1">Infraestructura vial prioritaria para reducir los tiempos de viaje.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="bg-[#1a2b4c] text-white py-8 px-8 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-sm opacity-80">
+        © 2026 Centro de Transporte Buenos Aires Web. Todos los derechos reservados.
+      </p>
+      <div class="flex gap-8 text-sm font-medium">
+        <a href="#" class="hover:text-orange-400">Horarios</a>
+        <a href="#" class="hover:text-orange-400">Accesibilidad</a>
+        <a href="#" class="hover:text-orange-400">Privacidad</a>
+        <a href="#" class="hover:text-orange-400">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
