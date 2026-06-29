@@ -1,204 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #a9c7d6;
-    color: #333;
-    line-height: 1.6;
+:root {
+    --color-principal: #0099CC;
+    --color-acento: #00D4FF;
+
+    --color-oscuro: #0A1628;
+    --color-oscuro-secundario: #0D2040;
+
+    --color-fondo: #F0F6FA;
+    --color-blanco: #FFFFFF;
+    
+    --color-texto: #1F2937;
+    --color-texto-secundario: #6B7280;
+
+    --radio: 12px;
+    --sombra: 0 4px 20px rgba(0,0,0,.1);
 }
-/*navegacion*/
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
 header {
+    background: var(--color-oscuro);
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-    background-color: #282ff6;
-    border-bottom: 5px solid #2896F6;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 80px;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    flex-direction: column;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.4);
 }
 .logo {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 3.5rem;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-    margin-top: 10px;
+    font-size: 1.35rem;
+    color: var(--color-blanco);
 }
-header nav ul {
-    display: flex;
-    flex-direction: row;
+.logo span {
+    color: #00D4FF;
+}
+nav ul {
     list-style: none;
-    gap: 20px;
-    padding: 0;
+    display: flex;
+    gap: 1rem;
 }
-/* botones*/
-header nav ul li a {
+nav ul li a {
+    color: #ccc;
     text-decoration: none;
-    color: white;
-    font-weight: 700;
-    font-size: 0.85rem;
-    padding: 8px 16px;
-    transition:0.3s;
-    text-transform: capitalize;
+    font-size: .9rem;
+    font-weight: 500;
+    padding: .45rem 1rem;
+    border-radius: 8px;
+    transition: all .2s;
 }
-header nav ul li a:hover {
-    background-color: #8828f6;
-    color: white;
-    border-radius: 4px;
+nav ul li a:hover, nav ul li a.active {
+    background: var(--color-principal);
+    color: var(--color-blanco);
 }
-
-/* abajo de los botones */
-#Inicio {
-    padding: 60px 10%;
+.hero {
+    background: linear-gradient(135deg,
+    var(--color-oscuro) 0%,
+     var(--color-oscuro-secundario) 60%,
+      #003380 100%);
+    color: var(--color-blanco);
+    padding: 6rem 2rem;
+    gap: 1.5rem;
     text-align: center;
-    background-color: white;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(0,212,255,.03) 40px,rgba(0,212,255,.03) 41px);
+}
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size:2.8rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
 }
 
-#Inicio h1 {
-    font-size: 2.8rem;
-    color: #282ff6;
-    margin-bottom: 20px;
-
-}
-
-#Inicio img {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 20px rgba(40, 47, 246, 0.1);
-    display: inline-block;
-}
-
-.contenido.inicio p {
-    font-size: 1.2rem;
-    color: #555555;
-    max-width: 800px;
+.propuesta,
+.equipo,
+#proyectos {
+    padding: 3.5rem 2rem;
+    max-width: 1100px;
     margin: 0 auto;
 }
-.propuesta {
-    padding: 80px 10%;
-    background-color: #f8f9ff; 
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.team-card{
+    background: var(--color-blanco);
+    padding: 1.5rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
     text-align: center;
+    transition: transform .2s;
 }
-
-.propuesta h2 {
-    font-size: 2.2rem;
-    color: #1b1b82; 
-    margin-bottom: 20px;
-    font-family: 'lucida Sans Unicode';
-    font-weight: 800;
-    letter-spacing: -1px;
+.team-card:hover {
+    transform:translateY(-4px);
 }
-
-.servicios {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.servicio {
-  background-color: #d6e6ef; /* celeste */
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.servicio h3 {
-  color: #0e7dbb;
-}
-.equipo {
-    padding: 80px 10%;
-    text-align: center;
-}
-.cards {
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+    var(--color-principal),
+    var(--color-acento));
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    align-items: center;
+    justify-content:center;
+    font-size: 1.6rem;
+    margin: 0 auto .75rem;
 }
-.card {
-    background: #fff;
-    border: 1px solid #eee;
-    border-top: 5px solid #282ff6;
-    padding: 30px;
-    border-radius: 8px;
-    width: 200px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+.team-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: .96rem;
+    margin-bottom: .25rem;
 }
-.card h3 {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    color: #282ff6;
+.propuesta-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items:center ;
 }
-.card a {
+.propuesta-inner h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--color-blanco);
+    margin-bottom: 1rem;
+}
+.propuesta-inner h2 span { color: var(--color-acento); }
+.propuesta-inner p { color: #ccc; line-height: 1.7; font-size: .95rem; }
+.propuesta-stats { display: flex; flex-direction: column; gap: 1rem; }
+.p-stat {
+    background: rgba(255,255,255,.07);
+    border-radius: var(--radio);
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--color-acento);
+}
+.p-stat .num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--color-acento); }
+.p-stat .lbl { font-size: .82rem; color: #aaa; }
+.propuesta {
+    background: var(--color-oscuro);
+    padding: 3.5rem 2rem;
+}
+.main-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.main-links a {
+    background: var(--color-principal);
+    color: var(--color-blanco);
     text-decoration: none;
-    color: #282ff6;
-    font-weight: bold;
+    border-radius: var(--radio);
+    padding: 2rem;
+    display: flex;
+    flex-direction:column; 
+    transition: transform .2s;
 }
-.card a:hover {
-    color: #8828f6;
-
+.main-links a:hover {
+    transform: translateY(-5px);
 }
-
-.informacion p {
-    font-size: 0.9rem;
-    color: #888888;
+.main-links a span {
+    font-size: 2.5rem;
 }
-.menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-  margin-top: 10px;
+.main-links a h3 {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
 }
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.main-links a p {
+    font-size: .88rem;
+    opacity: .85;
 }
-
-.menu a:hover {
-  text-decoration: underline;
-}
-
-main {
-  padding: 20px;
-  text-align: center;
-}
-
 footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #0e7dbb;
-  color: white;
-  margin-top: 20px;
+    background: var(--color-oscuro);
+    color: #777;
+    text-align: center;
+    padding: 2rem;
+    font-size: .85rem;
 }
-@media (max-width: 600px) {
-    .logo {
+.team-card a {
+    display: inline-block;
+    background: var(--color-principal);
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .85rem;
+    padding: .4rem 1rem;
+    border-radius: 8px;
+    margin-top: .75rem;
+}
+.team-card a:hover {
+    background: var(--color-acento);
+}
+#servicios {
+    padding: 3.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+#servicios h2 {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    color: var(--color-oscuro);
+}
+.servicios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.servicios-card {
+    background: var(--color-blanco);
+    border-radius: var(--radio);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--sombra);
+    border-top: 4px solid var(--color-principal);
+    transition: transform .2s;
+}
+.servicios-card:hover {
+    transform: translateY(-4px);
+}
+.servicios-card span {
+    font-size: 2.5rem;
+}
+.servicios-card h3 {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    margin: .75rem 0 .5rem;
+}
+.servicios-card p {
+    font-size: .88rem;
+    color: var(--color-texto-secundario);
+    line-height: 1.5;
+}
+#contacto {
+    background: var(--color-oscuro);
+    padding: 3.5rem 2rem;
+    text-align: center;
+}
+#contacto h2 {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: var(--color-blanco);
+    margin-bottom: 1.5rem;
+}
+#contacto p {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: .75rem;
+}
+@media (max-width: 768px) {
+    header {
+        padding: 0 1.5rem;
+    }
+    .hero h1 {
         font-size: 1.8rem;
-
     }
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+    .propuesta-inner {
+        grid-template-columns: 1fr;
     }
-    section {
-        padding: 40px 5%;
+    .main-links {
+        grid-template-columns: 1fr;
     }
-    .card {
-        width: 100%;
+    .servicios-grid {
+        grid-template-columns: 1fr;
     }
 }
